@@ -1,8 +1,7 @@
-const { post } = require("../../routes");
-
 
 module.exports = {
     index(req, res) {
+
         const posts = [{
             author: {
                 name: "Fulano",

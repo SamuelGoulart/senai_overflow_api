@@ -1,4 +1,3 @@
-const { Model, DataTypes } = require("sequelize/types");
 const { Model, DataTypes } = require("sequelize");
 
 class Post extends Model {
@@ -12,13 +11,13 @@ class Post extends Model {
                 gist: DataTypes.STRING
             },
             {
-              connection
+              sequelize: connection,
             }
         )
     }
 
     static associate(models) {
-
+        this.belongsTo(models.User);
     }
 }
 
