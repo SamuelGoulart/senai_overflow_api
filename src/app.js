@@ -5,6 +5,9 @@ const routes = require("./routes");
 
 const app = express();
 
+//dizemos para o expressa que ele pode aceitar json
+app.use(express.json());
+
 app.use(routes);
 
 module.exports = app;
