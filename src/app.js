@@ -1,8 +1,13 @@
 const express = require("express");
 require("./database");
 const routes = require("./routes");
+const cors = require("cors");
 
 const app = express();
+
+app.use(cors({
+    origin: "http://localhost:3000"
+}));
 
 //dizemos para o expressa que ele pode aceitar json
 app.use(express.json());
