@@ -30,7 +30,9 @@ module.exports = {
         });
 
         //gerar um token
-        const token = jwt.sign({ userId: user.id }, auth.secret, { expiresIn: "1h"} )
+        const token = jwt.sign({ userId: user.id }, auth.secret, {
+            expiresIn: "1h"
+        });
 
         //retornar o usuário
         res.send({
@@ -39,7 +41,6 @@ module.exports = {
                 name: user.name,
                 email: user.email
             },
-
             token
         });
     }

@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 
 class User extends Model {
-    static init(connection) {
+    static init(connection){
         super.init(
             {
                 name: DataTypes.STRING,
@@ -11,12 +11,10 @@ class User extends Model {
             {
                 sequelize: connection,
             }
-        )
+        );
     }
-
-    static associate(models) {
+    static associate(models){
         this.hasMany(models.Post);
     }
 }
-
 module.exports = User;

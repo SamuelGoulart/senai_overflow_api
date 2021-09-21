@@ -1,5 +1,7 @@
 const routes = require("express").Router();
 
+const uploadSingleImage = require("./middlewares/uploadSingleImage");
+
 const postController = require("./controllers/posts");
 const sessionController = require("./controllers/sessions");
 const userController = require("./controllers/users");
@@ -13,5 +15,6 @@ routes.use(authMiddleware);
 
 //rotas privadas
 routes.get('/posts', postController.index);
+routes.post("/posts", uploadSingleImage, postController.store);
 
 module.exports = routes;

@@ -13,12 +13,12 @@ module.exports = {
         allowNull: false
       },
       email: {
-        type: Sequelize.TEXT,
+        type: Sequelize.STRING,
         allowNull: false
       },
       password: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: false
       },
       created_at: {
         type: Sequelize.DATE,
@@ -32,6 +32,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    queryInterface.dropTable("users");
+    queryInterface.dropTable("posts");
   }
 };

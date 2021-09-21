@@ -1,24 +1,25 @@
 const { Model, DataTypes } = require("sequelize");
 
+
 class Post extends Model {
 
-    static init(connection) {
+    static init(connection){
         super.init(
             {
                 title: DataTypes.STRING,
                 description: DataTypes.STRING,
                 image: DataTypes.STRING,
-                gist: DataTypes.STRING
+                gist: DataTypes.STRING,
             },
             {
-              sequelize: connection,
+                sequelize: connection,
             }
-        )
+        );
     }
 
-    static associate(models) {
+    static associate(models){
         this.belongsTo(models.User);
     }
-}
 
+}
 module.exports = Post;

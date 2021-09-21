@@ -7,12 +7,13 @@ const User = require("../models/User");
 const connection = 
     new Sequelize(dbConfig.url, dbConfig.config);
 
-// inicializando os models
+//inicializando os models
 Post.init(connection);
 User.init(connection);
 
 //inicializando os relacionamentos
 Post.associate(connection.models);
 User.associate(connection.models);
+
 
 module.exports = connection;
